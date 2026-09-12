@@ -1,16 +1,14 @@
+
+import logo from "../assets/logo-text.png";
+
 function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-brand-gradient flex items-center justify-center text-white font-bold text-sm">
-            DS
+            <div className="mb-3">
+            <img src={logo} alt="Dev Stack" className="h-8 object-contain" />
           </div>
-          <span className="text-lg font-bold text-gray-900">
-            Dev <span className="text-brand-gradient">Stack</span>
-          </span>
-        </div>
 
         {/* Center nav links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
