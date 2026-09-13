@@ -17,10 +17,13 @@ function Hero() {
         </p>
 
         <div className="flex items-center gap-4">
-          <button className="bg-brand-gradient text-white font-medium px-6 py-3 rounded-lg">
+          {/* Explore Technologies */}
+          <button className="bg-brand-gradient text-white font-medium px-6 py-3 rounded-lg cursor-pointer hover:opacity-90 hover:scale-105 transition-all duration-200">
             Explore Technologies
           </button>
-          <button className="border border-gray-300 text-gray-700 font-medium px-6 py-3 rounded-lg">
+
+          {/* Learn More */}
+          <button className="border border-gray-300 text-gray-700 font-medium px-6 py-3 rounded-lg cursor-pointer hover-brand-gradient hover:text-white hover:border-transparent hover:scale-105 transition-all duration-200">
             Learn More
           </button>
         </div>

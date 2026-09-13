@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --brand-gradient: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6);
@@ -17,4 +14,8 @@
 
 .bg-brand-gradient {
   background-image: var(--brand-gradient);
+}
+
+.hover-brand-gradient:hover {
+  background: var(--brand-gradient);
 }

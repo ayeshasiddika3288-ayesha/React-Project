@@ -6,54 +6,144 @@ function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Mobile: hamburger (left) */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-700 text-xl"
-        >
-          {isOpen ? "✕" : "☰"}
-        </button>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+        {/* Main Navbar */}
+        <div className="grid grid-cols-3 items-center">
+          {/* Mobile: Hamburger */}
+          <div className="md:hidden flex justify-start">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-700 text-xl cursor-pointer hover:text-pink-600 transition-all duration-200"
+            >
+              {isOpen ? "✕" : "☰"}
+            </button>
+          </div>
 
-        {/* Logo */}
-        <div>
-          <img src={logo} alt="Dev Stack" className="h-8 object-contain" />
-        </div>
+          {/* Logo */}
+          <div className="flex md:justify-start justify-center">
+            <img
+              src={logo}
+              alt="Dev Stack"
+              className="h-7 sm:h-8 object-contain"
+            />
+          </div>
 
-        {/* Center nav links (desktop only) */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-          <a href="#" className="text-pink-600">Home</a>
-          <a href="#" className="hover:text-gray-900">Technologies</a>
-          <a href="#" className="hover:text-gray-900">Projects</a>
-          <a href="#" className="hover:text-gray-900">About</a>
-          <a href="#" className="hover:text-gray-900">Contact</a>
-        </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center justify-center gap-5 lg:gap-8 text-sm font-medium">
+            <a
+              href="#"
+              className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-full cursor-pointer transition-all duration-200 hover:scale-105"
+            >
+              Home
+            </a>
 
-        {/* Right buttons (desktop only) */}
-        <div className="hidden md:flex items-center gap-4">
-          <button className="text-sm font-medium text-gray-700">Sign In</button>
-          <button className="bg-brand-gradient text-white text-sm font-medium px-5 py-2 rounded-full">
-            Sign Up
-          </button>
-        </div>
+            <a
+              href="#"
+              className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-full cursor-pointer transition-all duration-200 hover:scale-105"
+            >
+              Technologies
+            </a>
 
-        {/* Mobile: Sign In / Sign Up (right) */}
-        <div className="flex md:hidden items-center gap-3">
-          <button className="text-sm font-medium text-gray-700">Sign In</button>
-          <button className="bg-brand-gradient text-white text-sm font-medium px-4 py-1.5 rounded-full">
-            Sign Up
-          </button>
+            <a
+              href="#"
+              className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-full cursor-pointer transition-all duration-200 hover:scale-105"
+            >
+              Projects
+            </a>
+
+            <a
+              href="#"
+              className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-full cursor-pointer transition-all duration-200 hover:scale-105"
+            >
+              About
+            </a>
+
+            <a
+              href="#"
+              className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-full cursor-pointer transition-all duration-200 hover:scale-105"
+            >
+              Contact
+            </a>
+          </div>
+
+          {/* Desktop: Sign In / Sign Up */}
+          <div className="hidden md:flex items-center justify-end gap-3">
+            {/* Sign In */}
+            <button
+              className="text-sm font-medium text-gray-700 px-4 py-2 rounded-full cursor-pointer hover-brand-gradient hover:text-white hover:scale-105 transition-all duration-200"
+            >
+              Sign In
+            </button>
+
+            {/* Sign Up */}
+            <button
+              className="bg-brand-gradient text-white text-sm font-medium px-5 py-2 rounded-full cursor-pointer hover:opacity-90 hover:scale-105 transition-all duration-200"
+            >
+              Sign Up
+            </button>
+          </div>
+
+          {/* Mobile: Sign In / Sign Up */}
+          <div className="md:hidden flex items-center justify-end gap-2">
+            {/* Mobile Sign In */}
+            <button
+              className="text-xs sm:text-sm font-medium text-gray-700 px-3 py-1.5 rounded-full cursor-pointer hover-brand-gradient hover:text-white hover:scale-105 transition-all duration-200"
+            >
+              Sign In
+            </button>
+
+            {/* Mobile Sign Up */}
+            <button
+              className="bg-brand-gradient text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full cursor-pointer hover:opacity-90 hover:scale-105 transition-all duration-200"
+            >
+              Sign Up
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden flex flex-col gap-4 px-6 pb-4 text-sm font-medium text-gray-600">
-          <a href="#" className="text-pink-600">Home</a>
-          <a href="#" className="hover:text-gray-900">Technologies</a>
-          <a href="#" className="hover:text-gray-900">Projects</a>
-          <a href="#" className="hover:text-gray-900">About</a>
-          <a href="#" className="hover:text-gray-900">Contact</a>
+        <div className="md:hidden flex flex-col gap-2 px-4 sm:px-6 pb-4 text-sm font-medium">
+          <a
+            href="#"
+            onClick={() => setIsOpen(false)}
+            className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-lg cursor-pointer transition-all duration-200"
+          >
+            Home
+          </a>
+
+          <a
+            href="#"
+            onClick={() => setIsOpen(false)}
+            className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-lg cursor-pointer transition-all duration-200"
+          >
+            Technologies
+          </a>
+
+          <a
+            href="#"
+            onClick={() => setIsOpen(false)}
+            className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-lg cursor-pointer transition-all duration-200"
+          >
+            Projects
+          </a>
+
+          <a
+            href="#"
+            onClick={() => setIsOpen(false)}
+            className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-lg cursor-pointer transition-all duration-200"
+          >
+            About
+          </a>
+
+          <a
+            href="#"
+            onClick={() => setIsOpen(false)}
+            className="text-gray-900 hover-brand-gradient hover:text-white px-3 py-2 rounded-lg cursor-pointer transition-all duration-200"
+          >
+            Contact
+          </a>
         </div>
       )}
     </nav>
