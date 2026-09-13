@@ -2,7 +2,13 @@ function TechnologyCard({ technology, onAdd, isAdded }) {
   const { name, description, icon, category, difficulty, rating, badge } = technology;
 
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+    <div
+      className={`bg-white rounded-2xl p-5 flex flex-col shadow-sm transition-all ${
+        isAdded
+          ? "border-2 border-pink-400 shadow-md"
+          : "border border-gray-200 hover:shadow-md"
+      }`}
+    >
       <div className="flex items-start justify-between mb-3">
         <img src={icon} alt={name} className="w-10 h-10 object-contain" />
         <span className="text-xs font-medium px-3 py-1 rounded-full bg-orange-50 text-orange-600">
@@ -26,7 +32,7 @@ function TechnologyCard({ technology, onAdd, isAdded }) {
         disabled={isAdded}
         className={`w-full py-2 rounded-lg font-medium text-sm transition-colors ${
           isAdded
-            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+            ? "bg-green-50 text-green-600 border border-green-200 cursor-not-allowed"
             : "bg-gray-900 text-white hover:bg-gray-800"
         }`}
       >
