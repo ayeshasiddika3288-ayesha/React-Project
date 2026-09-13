@@ -19,8 +19,8 @@ Dev Stack is a React-based web application that helps developers explore popular
 
 ## Live Links
 
-- **GitHub Repository:** [add your repo link here]
-- **Live Site:** [add your deployed link here]
+- **GitHub Repository:** https://github.com/ayeshasiddika3288-ayesha/React-Project
+- **Live Site:** https://react-project-gold-gamma.vercel.app/
 
 ---
 
